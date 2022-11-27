@@ -1,1 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Fish
+        {
+        protected:
+                string name;
+                bool hasScales;
+        public:
+                void Swim();
+        };
+
+void Fish::Swim()
+        {
+        cout << "*uses fins to paddle forward*" << endl;
+        }
+
+class Tuna: public Fish // <- if you don't include that public keyword, public methods won't get inherited.
+        {
+        private:
+                bool saltwaterFish;
+        public:
+                Tuna();
+                void Canned();
+        };
+        
+Tuna::Tuna()
+        {
+        
+        name = "Tuna";
+        hasScales = true;
+       
+        saltwaterFish = true;
+        }
+        
+void Tuna::Canned()
+        {
+        cout << "People like to put me in cans." << endl;
+        }
+        
+        
+int main()
+        {
+        Fish fishie;
+        fishie.Swim();
+        
+        Tuna tuna;
+        tuna.Canned();
+    
+        tuna.Swim();
+        
+        return 0;
+    
+    }
 
